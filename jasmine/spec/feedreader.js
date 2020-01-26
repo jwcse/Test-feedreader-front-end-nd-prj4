@@ -84,9 +84,7 @@ $(function() {
     /* TODO: Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                done();
-            });
+            loadFeed(0, done);
         })
 
         /* TODO: Write a test that ensures when the loadFeed
@@ -95,16 +93,20 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-        it('should call loadFeed and contain entry element in container', function(done) {
-            const container = document.querySelectorAll('.feed .entry');
-            expect(container.length).toBeGreaterThanOrEqual(1);
-            done();
+        it('should call loadFeed and contain entry element in container', function() {
+            const entries = document.querySelectorAll('.feed .entry');
+            expect(entries.length).toBeGreaterThanOrEqual(1);
         });
     });
     /* TODO: Write a new test suite named "New Feed Selection" */
+    describe('New Feed Selection', function() {
 
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        it('should change content when loadFeed is called',function() {
+
+        });
+    });
 }());
